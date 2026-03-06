@@ -1,0 +1,351 @@
+/* ═══════════════════════════════════════
+   ROOT
+═══════════════════════════════════════ */
+.root-pane {
+    -fx-background-color: #0D1117;
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+}
+
+.bg-canvas {
+    -fx-background-color:
+        radial-gradient(center 50% 50%, radius 80%, #151B26, #0D1117);
+    -fx-min-width: 940;
+    -fx-min-height: 560;
+    -fx-max-width: 940;
+    -fx-max-height: 560;
+}
+
+.outer-shell {
+    -fx-background-color: transparent;
+}
+
+/* ═══════════════════════════════════════
+   PANNEAU GAUCHE · SLAB FONCÉ
+═══════════════════════════════════════ */
+.left-slab {
+    -fx-background-color: linear-gradient(to bottom right, #1A2438, #111827);
+    -fx-background-radius: 16 0 0 16;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1 0 1 1;
+    -fx-border-radius: 16 0 0 16;
+    -fx-effect: dropshadow(gaussian, rgba(201,168,76,0.15), 30, 0, 0, 0);
+}
+
+.corner-deco-tl {
+    -fx-background-color: transparent;
+    -fx-border-color: #C9A84C #C9A84C transparent transparent;
+    -fx-border-width: 2;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-max-width: 28;
+    -fx-max-height: 28;
+    -fx-translate-x: -26;
+    -fx-translate-y: -20;
+}
+
+.corner-deco-br {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #C9A84C #C9A84C;
+    -fx-border-width: 2;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-max-width: 28;
+    -fx-max-height: 28;
+    -fx-translate-x: 26;
+}
+
+.mono-ring {
+    -fx-background-color: transparent;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 2;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-min-width: 84;
+    -fx-min-height: 84;
+    -fx-max-width: 84;
+    -fx-max-height: 84;
+    -fx-effect: dropshadow(gaussian, rgba(201,168,76,0.35), 16, 0, 0, 0);
+}
+
+.mono-letter {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #C9A84C;
+    -fx-font-family: "Georgia", serif;
+}
+
+.gold-divider {
+    -fx-background-color: linear-gradient(to right, transparent, #C9A84C, transparent);
+    -fx-min-height: 1;
+    -fx-max-height: 1;
+    -fx-min-width: 180;
+    -fx-max-width: 180;
+}
+
+.app-name {
+    -fx-text-fill: #F0E6C8;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Georgia", serif;
+}
+
+.app-tagline {
+    -fx-text-fill: #C9A84C;
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.app-desc {
+    -fx-text-fill: rgba(200,210,230,0.65);
+    -fx-font-size: 12.5px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-line-spacing: 5;
+    -fx-max-width: 280;
+}
+
+/* Badges rôles */
+.badge {
+    -fx-background-radius: 2;
+    -fx-padding: 4 10 4 10;
+    -fx-font-size: 9px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-weight: bold;
+}
+
+.badge-org {
+    -fx-background-color: rgba(201,168,76,0.18);
+    -fx-text-fill: #C9A84C;
+    -fx-border-color: rgba(201,168,76,0.45);
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+}
+
+.badge-membre {
+    -fx-background-color: rgba(59,130,246,0.15);
+    -fx-text-fill: #93C5FD;
+    -fx-border-color: rgba(59,130,246,0.4);
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+}
+
+.badge-bene {
+    -fx-background-color: rgba(52,211,153,0.15);
+    -fx-text-fill: #6EE7B7;
+    -fx-border-color: rgba(52,211,153,0.4);
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+}
+
+/* ═══════════════════════════════════════
+   SÉPARATEUR VERTICAL DORÉ
+═══════════════════════════════════════ */
+.diagonal-cut {
+    -fx-background-color: linear-gradient(to bottom, #C9A84C22, #C9A84C, #C9A84C22);
+    -fx-min-width: 1;
+    -fx-max-width: 1;
+    -fx-min-height: 560;
+}
+
+/* ═══════════════════════════════════════
+   PANNEAU DROIT · IVOIRE
+═══════════════════════════════════════ */
+.right-slab {
+    -fx-background-color: #F8F7F4;
+    -fx-background-radius: 0 16 16 0;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1 1 1 0;
+    -fx-border-radius: 0 16 16 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 40, 0, 8, 0);
+}
+
+.step-num {
+    -fx-font-size: 11px;
+    -fx-font-family: "Georgia", serif;
+    -fx-text-fill: #C9A84C;
+    -fx-font-weight: bold;
+}
+
+.step-label {
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #9CA3AF;
+}
+
+.form-headline {
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Georgia", serif;
+    -fx-text-fill: #1A1A2E;
+}
+
+.form-sub {
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #6B7280;
+}
+
+/* ═══════════════════════════════════════
+   CHAMPS
+═══════════════════════════════════════ */
+.field-label {
+    -fx-font-size: 9.5px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-text-fill: #9CA3AF;
+    -fx-padding: 0 0 7 0;
+}
+
+.field-frame {
+    -fx-background-color: transparent;
+    -fx-border-color: #D4C4A0;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.field-input {
+    -fx-background-color: white;
+    -fx-background-radius: 3;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1A1A2E;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-prompt-text-fill: #C4B8A0;
+    -fx-padding: 13 14 13 40;
+}
+
+.field-input:focused {
+    -fx-background-color: #FFFDF7;
+    -fx-border-color: transparent;
+    -fx-effect: none;
+}
+
+.field-icon-left {
+    -fx-text-fill: #C9A84C;
+    -fx-font-size: 15px;
+    -fx-padding: 0 0 0 13;
+}
+
+/* ═══════════════════════════════════════
+   BOUTONS
+═══════════════════════════════════════ */
+.btn-primary {
+    -fx-background-color: #1A1A2E;
+    -fx-text-fill: #C9A84C;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-radius: 4;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 4;
+    -fx-padding: 15 0 15 0;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #C9A84C;
+    -fx-text-fill: #1A1A2E;
+    -fx-effect: dropshadow(gaussian, rgba(201,168,76,0.4), 18, 0, 0, 4);
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 13px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-radius: 4;
+    -fx-border-color: #D4C4A0;
+    -fx-border-radius: 4;
+    -fx-border-width: 1.5;
+    -fx-padding: 13 0 13 0;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-border-color: #C9A84C;
+    -fx-text-fill: #C9A84C;
+}
+
+/* ═══════════════════════════════════════
+   SÉPARATEUR TEXTE
+═══════════════════════════════════════ */
+.sep-line {
+    -fx-background-color: #E5DFD4;
+    -fx-min-height: 1;
+    -fx-max-height: 1;
+    -fx-pref-height: 1;
+}
+
+.sep-text {
+    -fx-text-fill: #C4B8A0;
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* ═══════════════════════════════════════
+   MESSAGES
+═══════════════════════════════════════ */
+.error-label {
+    -fx-text-fill: #DC2626;
+    -fx-font-size: 11.5px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.success-label {
+    -fx-text-fill: #059669;
+    -fx-font-size: 11.5px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* ═══════════════════════════════════════
+   REGISTER (réutilisation charte)
+═══════════════════════════════════════ */
+.field-hint {
+    -fx-font-size: 10.5px;
+    -fx-text-fill: #9CA3AF;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-padding: 3 0 0 0;
+}
+
+.btn-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C9A84C;
+    -fx-font-size: 12.5px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+.btn-link:hover {
+    -fx-text-fill: #1A1A2E;
+}
+
+.role-info-card {
+    -fx-background-color: rgba(201,168,76,0.08);
+    -fx-background-radius: 6;
+    -fx-padding: 10 14 10 14;
+    -fx-border-color: rgba(201,168,76,0.2);
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+}
+
+.role-info-title {
+    -fx-text-fill: #C9A84C;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.role-info-desc {
+    -fx-text-fill: rgba(200,210,230,0.65);
+    -fx-font-size: 10.5px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.separator-label {
+    -fx-text-fill: #C4B8A0;
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}

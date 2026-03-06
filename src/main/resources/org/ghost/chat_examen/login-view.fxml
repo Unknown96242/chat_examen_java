@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane prefHeight="560.0" prefWidth="940.0" styleClass="root-pane"
+           xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.ghost.chat_examen.controllers.LoginController">
+
+    <stylesheets>
+        <URL value="@styles/login.css" />
+    </stylesheets>
+
+    <!-- ░░ FOND GLOBAL avec motif géométrique ░░ -->
+    <Pane styleClass="bg-canvas" />
+
+    <!-- ░░ BLOC CENTRAL ░░ -->
+    <HBox alignment="CENTER" styleClass="outer-shell">
+
+        <!-- ══ PANNEAU GAUCHE · Identité Visuelle ══ -->
+        <VBox alignment="CENTER" prefWidth="400" styleClass="left-slab">
+            <padding><Insets bottom="64" left="54" right="54" top="64"/></padding>
+
+            <!-- Coin décoratif doré haut gauche -->
+            <Pane styleClass="corner-deco-tl" VBox.vgrow="NEVER"/>
+
+            <!-- Monogramme -->
+            <StackPane styleClass="mono-ring" VBox.vgrow="NEVER">
+                <Label styleClass="mono-letter" text="AC"/>
+            </StackPane>
+
+            <!-- Ligne dorée séparatrice -->
+            <Pane styleClass="gold-divider">
+                <VBox.margin><Insets top="22" bottom="20"/></VBox.margin>
+            </Pane>
+
+            <Label styleClass="app-name" text="AssociChat"/>
+            <Label styleClass="app-tagline" text="Messagerie Instantanée"/>
+
+            <!-- Description -->
+            <Label styleClass="app-desc"
+                   text="Connectez vos membres, orchestrez vos événements, communiquez sans limite."
+                   textAlignment="CENTER" wrapText="true">
+                <VBox.margin><Insets top="28"/></VBox.margin>
+            </Label>
+
+            <!-- Badges rôles redesignés -->
+            <HBox alignment="CENTER" spacing="8">
+                <VBox.margin><Insets top="38"/></VBox.margin>
+                <Label styleClass="badge badge-org" text="ORGANISATEUR"/>
+                <Label styleClass="badge badge-membre" text="MEMBRE"/>
+                <Label styleClass="badge badge-bene" text="BÉNÉVOLE"/>
+            </HBox>
+
+            <!-- Coin décoratif doré bas droit -->
+            <Pane styleClass="corner-deco-br">
+                <VBox.margin><Insets top="32"/></VBox.margin>
+            </Pane>
+
+        </VBox>
+
+        <!-- ══ SÉPARATEUR DIAGONAL ══ -->
+        <StackPane styleClass="diagonal-cut" prefWidth="24"/>
+
+        <!-- ══ PANNEAU DROIT · Formulaire ══ -->
+        <VBox alignment="CENTER" prefWidth="516" styleClass="right-slab">
+            <padding><Insets bottom="64" left="68" right="68" top="64"/></padding>
+
+            <!-- Indicateur numéroté -->
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label styleClass="step-num" text="01"/>
+                <Label styleClass="step-label" text="Authentification"/>
+            </HBox>
+
+            <Label styleClass="form-headline" text="Bon retour.">
+                <VBox.margin><Insets top="14"/></VBox.margin>
+            </Label>
+            <Label styleClass="form-sub" text="Accédez à votre espace de travail"/>
+
+            <!-- Champ Username -->
+            <VBox styleClass="field-wrap">
+                <VBox.margin><Insets top="32"/></VBox.margin>
+                <Label styleClass="field-label" text="IDENTIFIANT"/>
+                <StackPane styleClass="field-frame">
+                    <TextField fx:id="usernameField"
+                               promptText="nom d'utilisateur"
+                               styleClass="field-input"/>
+                    <Label styleClass="field-icon-left" text="⊙" StackPane.alignment="CENTER_LEFT"/>
+                </StackPane>
+            </VBox>
+
+            <!-- Champ Password -->
+            <VBox styleClass="field-wrap">
+                <VBox.margin><Insets top="20"/></VBox.margin>
+                <Label styleClass="field-label" text="MOT DE PASSE"/>
+                <StackPane styleClass="field-frame">
+                    <PasswordField fx:id="passwordField"
+                                   promptText="••••••••"
+                                   styleClass="field-input"/>
+                    <Label styleClass="field-icon-left" text="◈" StackPane.alignment="CENTER_LEFT"/>
+                </StackPane>
+            </VBox>
+
+            <!-- Erreur -->
+            <Label fx:id="errorLabel" styleClass="error-label" text="" wrapText="true">
+                <VBox.margin><Insets top="10"/></VBox.margin>
+            </Label>
+
+            <!-- Bouton principal -->
+            <Button fx:id="loginBtn" maxWidth="Infinity" onAction="#seConnecter"
+                    styleClass="btn-primary" text="CONNEXION →">
+                <VBox.margin><Insets top="28"/></VBox.margin>
+            </Button>
+
+            <!-- Séparateur texte -->
+            <HBox alignment="CENTER" spacing="14">
+                <VBox.margin><Insets top="22"/></VBox.margin>
+                <Pane styleClass="sep-line" HBox.hgrow="ALWAYS"/>
+                <Label styleClass="sep-text" text="ou"/>
+                <Pane styleClass="sep-line" HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <!-- Bouton secondaire -->
+            <Button maxWidth="Infinity" onAction="#allerInscription"
+                    styleClass="btn-secondary" text="Créer un compte">
+                <VBox.margin><Insets top="16"/></VBox.margin>
+            </Button>
+
+        </VBox>
+    </HBox>
+
+</StackPane>

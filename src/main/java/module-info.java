@@ -13,6 +13,7 @@ module org.ghost.chat_examen {
     requires jbcrypt;
     requires atlantafx.base;
     requires static lombok;
+    requires javafx.graphics;
 
 
     opens org.ghost.chat_examen to javafx.fxml;

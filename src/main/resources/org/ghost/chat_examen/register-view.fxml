@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import java.net.URL?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.ghost.chat_examen.controllers.RegisterController"
+           prefHeight="650.0" prefWidth="1000.0"
+           styleClass="root-pane">
+
+    <stylesheets>
+        <!-- D'abord les styles communs -->
+        <URL value="@styles/login.css"/>
+        <!-- Ensuite les styles spécifiques (surchargent les précédents) -->
+        <URL value="@styles/register.css"/>
+    </stylesheets>
+
+    <!-- Fond avec dégradé -->
+    <Region styleClass="bg-canvas-full"/>
+
+    <!-- Conteneur centré -->
+    <HBox styleClass="content-wrapper" alignment="CENTER">
+
+        <!-- PANNEAU GAUCHE -->
+        <VBox styleClass="left-slab" minWidth="400" maxWidth="400" prefWidth="400">
+            <padding><Insets top="40" bottom="40" left="30" right="30"/></padding>
+
+            <!-- Décoration coin supérieur gauche -->
+            <Region styleClass="corner-deco-tl" StackPane.alignment="TOP_LEFT"/>
+
+            <!-- Logo et branding -->
+            <VBox alignment="CENTER" spacing="15">
+                <StackPane styleClass="mono-ring">
+                    <Label text="✨" styleClass="mono-letter" style="-fx-font-size: 36px;"/>
+                </StackPane>
+
+                <Label text="AssociChat" styleClass="app-name"/>
+                <Label text="Rejoignez l'équipe !" styleClass="app-tagline"/>
+                <Region styleClass="gold-divider"/>
+            </VBox>
+
+            <!-- Espacement -->
+            <Region VBox.vgrow="ALWAYS" minHeight="15"/>
+
+            <!-- Description -->
+            <VBox spacing="20">
+                <Label text="Créez votre compte et choisissez votre rôle au sein de l'association."
+                       styleClass="app-desc" wrapText="true" textAlignment="CENTER"/>
+
+                <!-- Explication des rôles -->
+                <VBox spacing="12">
+                    <VBox styleClass="role-info-card">
+                        <Label text="👑 ORGANISATEUR" styleClass="role-info-title"/>
+                        <Label text="Gère les membres et les événements"
+                               styleClass="role-info-desc" wrapText="true"/>
+                    </VBox>
+
+                    <VBox styleClass="role-info-card">
+                        <Label text="👤 MEMBRE" styleClass="role-info-title"/>
+                        <Label text="Participe aux discussions et événements"
+                               styleClass="role-info-desc" wrapText="true"/>
+                    </VBox>
+
+                    <VBox styleClass="role-info-card">
+                        <Label text="🤝 BÉNÉVOLE" styleClass="role-info-title"/>
+                        <Label text="Contribue aux activités de l'association"
+                               styleClass="role-info-desc" wrapText="true"/>
+                    </VBox>
+                </VBox>
+            </VBox>
+
+            <!-- Espacement -->
+            <Region VBox.vgrow="ALWAYS" minHeight="15"/>
+
+            <!-- Pied de page -->
+            <Label text="Déjà un compte ?" styleClass="sep-text"/>
+            <Button text="Se connecter" styleClass="btn-link" onAction="#retourLogin"/>
+
+            <!-- Décoration coin inférieur droit -->
+            <Region styleClass="corner-deco-br" StackPane.alignment="BOTTOM_RIGHT"/>
+        </VBox>
+
+        <!-- Séparateur vertical doré -->
+        <Region styleClass="diagonal-cut-main"/>
+
+        <!-- PANNEAU DROIT -->
+        <VBox styleClass="right-slab" minWidth="600" maxWidth="600" prefWidth="600">
+            <padding><Insets top="50" bottom="50" left="60" right="60"/></padding>
+
+            <!-- Titre du formulaire -->
+            <VBox spacing="8">
+                <Label text="Créer un compte" styleClass="form-headline"/>
+                <Label text="🚀 Rejoignez l'aventure" styleClass="form-sub"/>
+            </VBox>
+
+            <!-- Espacement -->
+            <Region VBox.vgrow="ALWAYS" minHeight="15"/>
+
+            <!-- Formulaire -->
+            <VBox spacing="20">
+
+                <!-- Champ Username -->
+                <VBox spacing="5">
+                    <Label text="Nom d'utilisateur" styleClass="field-label"/>
+                    <StackPane styleClass="field-frame">
+                        <TextField fx:id="usernameField"
+                                   promptText="Choisissez un identifiant unique"
+                                   styleClass="field-input"/>
+                        <Label text="👤" styleClass="field-icon-left" StackPane.alignment="CENTER_LEFT"/>
+                    </StackPane>
+                    <Label fx:id="usernameHint" text="" styleClass="field-hint"/>
+                </VBox>
+
+                <!-- Champ Password -->
+                <VBox spacing="5">
+                    <Label text="Mot de passe" styleClass="field-label"/>
+                    <StackPane styleClass="field-frame">
+                        <PasswordField fx:id="passwordField"
+                                       promptText="Minimum 6 caractères"
+                                       styleClass="field-input"/>
+                        <Label text="🔒" styleClass="field-icon-left" StackPane.alignment="CENTER_LEFT"/>
+                    </StackPane>
+                </VBox>
+
+                <!-- Champ Confirmation -->
+                <VBox spacing="5">
+                    <Label text="Confirmer le mot de passe" styleClass="field-label"/>
+                    <StackPane styleClass="field-frame">
+                        <PasswordField fx:id="confirmPasswordField"
+                                       promptText="Répétez votre mot de passe"
+                                       styleClass="field-input"/>
+                        <Label text="✓" styleClass="field-icon-left" StackPane.alignment="CENTER_LEFT"/>
+                    </StackPane>
+                </VBox>
+
+                <!-- Choix du rôle -->
+                <VBox spacing="5">
+                    <Label text="Rôle" styleClass="field-label"/>
+                    <StackPane styleClass="field-frame">
+                        <ComboBox fx:id="roleComboBox"
+                                  promptText="Sélectionnez votre rôle"
+                                  styleClass="register-combo-box"
+                                  maxWidth="Infinity"/>
+                        <Label text="🎯" styleClass="field-icon-left" StackPane.alignment="CENTER_LEFT"/>
+                    </StackPane>
+                </VBox>
+
+                <!-- Message -->
+                <Label fx:id="messageLabel" styleClass="error-label" wrapText="true">
+                    <VBox.margin><Insets top="10"/></VBox.margin>
+                </Label>
+
+                <!-- Bouton -->
+                <Button fx:id="registerBtn"
+                        text="CRÉER MON COMPTE"
+                        styleClass="btn-primary"
+                        maxWidth="Infinity"
+                        onAction="#sInscrire">
+                    <VBox.margin><Insets top="15"/></VBox.margin>
+                </Button>
+
+            </VBox>
+
+            <!-- Espacement -->
+            <Region VBox.vgrow="ALWAYS" minHeight="15"/>
+
+        </VBox>
+    </HBox>
+
+</StackPane>

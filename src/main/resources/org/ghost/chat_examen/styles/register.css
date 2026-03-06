@@ -1,0 +1,220 @@
+/* ═══════════════════════════════════════
+   REGISTER · STYLES SPÉCIFIQUES
+   ═══════════════════════════════════════ */
+
+/* Réutilisation des classes communes de login.css */
+/* Mais vous pouvez aussi les redéfinir ici */
+
+/* Cartes rôles */
+.role-info-card {
+    -fx-background-color: rgba(201,168,76,0.08);
+    -fx-background-radius: 8;
+    -fx-padding: 12 15 12 15;
+    -fx-border-color: rgba(201,168,76,0.2);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.role-info-title {
+    -fx-text-fill: #C9A84C;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.role-info-desc {
+    -fx-text-fill: rgba(200,210,230,0.6);
+    -fx-font-size: 11px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Hint sous les champs */
+.field-hint {
+    -fx-font-size: 10.5px;
+    -fx-text-fill: #9CA3AF;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-padding: 3 0 0 5;
+}
+
+/* Style pour le ComboBox - SPÉCIFIQUE À REGISTER */
+.combo-box-register {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.combo-box-register .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1A1A2E;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-padding: 14 14 14 45;
+}
+
+.combo-box-register .arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 10 0 0;
+}
+
+.combo-box-register .arrow {
+    -fx-background-color: #C9A84C;
+    -fx-min-width: 12;
+    -fx-min-height: 12;
+}
+
+.combo-box-register .context-menu {
+    -fx-background-color: white;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.combo-box-register .menu-item:focused {
+    -fx-background-color: rgba(201,168,76,0.15);
+}
+
+.combo-box-register .menu-item .label {
+    -fx-text-fill: #1A1A2E;
+}
+
+/* Message de succès */
+.success-label {
+    -fx-font-size: 12px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-padding: 8 12;
+    -fx-background-radius: 4;
+    -fx-background-color: rgba(5,150,105,0.1);
+    -fx-text-fill: #059669;
+    -fx-border-color: rgba(5,150,105,0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+}
+
+/* Animation pour le bouton register */
+.btn-primary-register {
+    -fx-background-color: #1A1A2E;
+    -fx-text-fill: #C9A84C;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-radius: 8;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 8;
+    -fx-padding: 16 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(201,168,76,0.2), 8, 0, 0, 2);
+    -fx-transition: all 0.2s ease;
+}
+
+.btn-primary-register:hover {
+    -fx-background-color: #C9A84C;
+    -fx-text-fill: #1A1A2E;
+    -fx-effect: dropshadow(gaussian, rgba(201,168,76,0.5), 15, 0, 0, 4);
+}
+
+.btn-primary-register:pressed {
+    -fx-translate-y: 2;
+    -fx-effect: dropshadow(gaussian, rgba(201,168,76,0.3), 8, 0, 0, 2);
+}
+
+.btn-primary-register:disabled {
+    -fx-opacity: 0.6;
+    -fx-cursor: wait;
+    -fx-effect: none;
+}
+
+/* Style spécifique pour le panneau gauche register */
+.left-slab-register {
+    -fx-background-color: linear-gradient(to bottom right, #1A2438, #111827);
+    -fx-background-radius: 16 0 0 16;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1 0 1 1;
+    -fx-border-radius: 16 0 0 16;
+    -fx-min-width: 400;
+    -fx-max-width: 400;
+    -fx-pref-width: 400;
+    -fx-min-height: 650;
+    -fx-max-height: 650;
+    -fx-pref-height: 650;
+}
+
+/* Style spécifique pour le panneau droit register */
+.right-slab-register {
+    -fx-background-color: #F8F7F4;
+    -fx-background-radius: 0 16 16 0;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1 1 1 0;
+    -fx-border-radius: 0 16 16 0;
+    -fx-min-width: 600;
+    -fx-max-width: 600;
+    -fx-pref-width: 600;
+    -fx-min-height: 650;
+    -fx-max-height: 650;
+    -fx-pref-height: 650;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 40, 0, 8, 0);
+}
+
+/* Dans register.css - STYLE DÉDIÉ POUR LE COMBOBOX */
+
+/* Style spécifique au register */
+.register-combo-box {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-mark-color: #C9A84C;
+}
+
+.register-combo-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #1A1A2E;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-padding: 14 14 14 45;
+}
+
+.register-combo-box .list-cell:selected {
+    -fx-background-color: white;
+    -fx-text-fill: #1A1A2E;
+}
+
+.register-combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.register-combo-box .arrow {
+    -fx-background-color: #C9A84C;
+    -fx-min-width: 12;
+    -fx-min-height: 12;
+}
+
+.register-combo-box .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #C9A84C;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.register-combo-box .list-cell:hover {
+    -fx-background-color: rgba(201,168,76,0.15);
+    -fx-text-fill: #1A1A2E;
+}
+
+.register-combo-box .list-cell:filled:selected,
+.register-combo-box .list-cell:filled:selected:hover {
+    -fx-background-color: rgba(201,168,76,0.25);
+    -fx-text-fill: #1A1A2E;
+}
+
+/* Animation de chargement */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    -fx-animation: pulse 1.5s infinite;
+}
+
+

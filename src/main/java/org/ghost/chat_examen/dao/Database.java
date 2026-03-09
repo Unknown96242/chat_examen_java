@@ -1,4 +1,3 @@
-
 package org.ghost.chat_examen.dao;
 
 import javax.persistence.EntityManager;

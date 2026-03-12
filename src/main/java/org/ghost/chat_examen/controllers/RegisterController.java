@@ -1,7 +1,6 @@
-
 package org.ghost.chat_examen.controllers;
 
-
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.ghost.chat_examen.client.ClientSocket;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,7 +46,79 @@ public class RegisterController implements Initializable {
     // Inscription
     @FXML
     public void sInscrire() {
-        //A faire plus tard
+        String username = usernameField.getText().trim();
+        String password = passwordField.getText();
+        String confirm  = confirmPasswordField.getText();
+        String role     = roleComboBox.getValue();
+
+        // Validations côté client
+        if (username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
+            afficherErreur("Veuillez remplir tous les champs.");
+            return;
+        }
+
+        if (username.length() < 3) {
+            afficherErreur("Le nom d'utilisateur doit faire au moins 3 caractères.");
+            return;
+        }
+
+        if (username.contains(" ")) {
+            afficherErreur("Le nom d'utilisateur ne doit pas contenir d'espaces.");
+            return;
+        }
+
+        if (password.length() < 6) {
+            afficherErreur("Le mot de passe doit faire au moins 6 caractères.");
+            return;
+        }
+
+        if (!password.equals(confirm)) {
+            afficherErreur("Les mots de passe ne correspondent pas.");
+            return;
+        }
+
+        registerBtn.setDisable(true);
+        registerBtn.setText("Création...");
+
+        // Dans un thread separe pour ne pas bloquer l'UI
+        new Thread(() -> {
+            try {
+                // Se connecter au serveur si pas encore connecte
+                if (!ClientSocket.estConnecte()) {
+                    ClientSocket.connecter();
+                }
+
+                ClientSocket.envoyer("REGISTER " + username + " " + password + " " + role);
+                String reponse = ClientSocket.lire();
+
+                Platform.runLater(() -> {
+                    if (reponse != null && reponse.equals("REGISTER_OK")) {
+                        afficherSucces("Compte créé ! Redirection...");
+
+                        // Attendre un peu puis retourner au login
+                        new Thread(() -> {
+                            try {
+                                Thread.sleep(1500);
+                                Platform.runLater(this::retourLogin);
+                            } catch (InterruptedException ignored) {}
+                        }).start();
+
+                    } else if (reponse != null && reponse.startsWith("REGISTER_FAIL")) {
+                        String raison = reponse.replace("REGISTER_FAIL ", "");
+                        afficherErreur(raison);
+                        registerBtn.setDisable(false);
+                        registerBtn.setText("Créer mon compte");
+                    }
+                });
+
+            } catch (Exception e) {
+                Platform.runLater(() -> {
+                    afficherErreur("Impossible de joindre le serveur.");
+                    registerBtn.setDisable(false);
+                    registerBtn.setText("Créer mon compte");
+                });
+            }
+        }).start();
     }
 
 

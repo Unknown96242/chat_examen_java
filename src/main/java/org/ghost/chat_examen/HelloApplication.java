@@ -1,4 +1,3 @@
-
 package org.ghost.chat_examen;
 
 import atlantafx.base.theme.CupertinoDark;
@@ -15,7 +14,6 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         Application.setUserAgentStylesheet(new CupertinoDark().getUserAgentStylesheet());
 
-        //A implementer formulaire de login au demarrage
         FXMLLoader fxmlLoader = new FXMLLoader(
                 HelloApplication.class.getResource("login-view.fxml")
         );

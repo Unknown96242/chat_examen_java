@@ -1,6 +1,3 @@
-/* ═══════════════════════════════════════
-   ROOT
-═══════════════════════════════════════ */
 .root-pane {
     -fx-background-color: #0D1117;
     -fx-font-family: "Georgia", "Times New Roman", serif;
@@ -19,9 +16,7 @@
     -fx-background-color: transparent;
 }
 
-/* ═══════════════════════════════════════
-   PANNEAU GAUCHE · SLAB FONCÉ
-═══════════════════════════════════════ */
+/*PANNEAU GAUCHE · SLAB FONCÉ*/
 .left-slab {
     -fx-background-color: linear-gradient(to bottom right, #1A2438, #111827);
     -fx-background-radius: 16 0 0 16;
@@ -136,9 +131,7 @@
     -fx-border-radius: 2;
 }
 
-/* ═══════════════════════════════════════
-   SÉPARATEUR VERTICAL DORÉ
-═══════════════════════════════════════ */
+/*ÉPARATEUR VERTICAL DORÉ*/
 .diagonal-cut {
     -fx-background-color: linear-gradient(to bottom, #C9A84C22, #C9A84C, #C9A84C22);
     -fx-min-width: 1;
@@ -146,9 +139,7 @@
     -fx-min-height: 560;
 }
 
-/* ═══════════════════════════════════════
-   PANNEAU DROIT · IVOIRE
-═══════════════════════════════════════ */
+/* PANNEAU DROIT · IVOIRE */
 .right-slab {
     -fx-background-color: #F8F7F4;
     -fx-background-radius: 0 16 16 0;
@@ -184,9 +175,7 @@
     -fx-text-fill: #6B7280;
 }
 
-/* ═══════════════════════════════════════
-   CHAMPS
-═══════════════════════════════════════ */
+/* CHAMPS*/
 .field-label {
     -fx-font-size: 9.5px;
     -fx-font-weight: bold;
@@ -226,9 +215,7 @@
     -fx-padding: 0 0 0 13;
 }
 
-/* ═══════════════════════════════════════
-   BOUTONS
-═══════════════════════════════════════ */
+/* BOUTONS*/
 .btn-primary {
     -fx-background-color: #1A1A2E;
     -fx-text-fill: #C9A84C;
@@ -267,9 +254,7 @@
     -fx-text-fill: #C9A84C;
 }
 
-/* ═══════════════════════════════════════
-   SÉPARATEUR TEXTE
-═══════════════════════════════════════ */
+/*SÉPARATEUR TEXTE*/
 .sep-line {
     -fx-background-color: #E5DFD4;
     -fx-min-height: 1;
@@ -283,9 +268,7 @@
     -fx-font-family: "Segoe UI", sans-serif;
 }
 
-/* ═══════════════════════════════════════
-   MESSAGES
-═══════════════════════════════════════ */
+/*MESSAGES*/
 .error-label {
     -fx-text-fill: #DC2626;
     -fx-font-size: 11.5px;
@@ -298,9 +281,7 @@
     -fx-font-family: "Segoe UI", sans-serif;
 }
 
-/* ═══════════════════════════════════════
-   REGISTER (réutilisation charte)
-═══════════════════════════════════════ */
+/* REGISTER */
 .field-hint {
     -fx-font-size: 10.5px;
     -fx-text-fill: #9CA3AF;
